@@ -7,27 +7,27 @@
   <title>Relieve y litología de España · Repaso aleatorio</title>
   <style>
     :root{--ink:#18324a;--paper:#f6f2e9;--card:#fff;--accent:#d76545;--green:#2e8064;--muted:#6d7680;--line:#d8d4cb}
-    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
     button{font:inherit}button:focus-visible{outline:4px solid #f2b84b;outline-offset:3px}
-    .app{min-height:100vh;display:grid;grid-template-columns:minmax(245px,320px) 1fr;gap:clamp(18px,3vw,48px);padding:clamp(18px,3vw,46px)}
+    .app{width:100%;height:100dvh;display:grid;grid-template-columns:minmax(190px,250px) minmax(0,1fr);gap:clamp(12px,2vw,28px);padding:clamp(10px,1.5vw,22px)}
     .side{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:8px 0}
     .eyebrow{text-transform:uppercase;letter-spacing:.15em;font-weight:900;font-size:.78rem;color:var(--accent)}
-    h1{font-size:clamp(2rem,3.6vw,4.4rem);line-height:.92;margin:.35rem 0 1rem;letter-spacing:-.055em;max-width:8ch}
+    h1{font-size:clamp(1.8rem,2.8vw,3.5rem);line-height:.94;margin:.35rem 0 .8rem;letter-spacing:-.055em;max-width:8ch}
     .intro{font-size:clamp(1rem,1.3vw,1.2rem);line-height:1.45;color:#445463;max-width:28ch}
     .filters{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--line);background:#fff9;border-radius:999px;padding:8px 12px;font-weight:800;color:var(--ink)}.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
     .tiny{font-size:.83rem;color:var(--muted);line-height:1.4}.reset{border:0;background:transparent;color:#8e3c2a;text-decoration:underline;text-underline-offset:3px;padding:0;cursor:pointer;font-weight:800;text-align:left}
-    .stage{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+    .stage{min-width:0;min-height:0;display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;gap:8px}
     .bottom-reset{align-self:flex-end;margin-right:max(0px,calc((100% - 1080px)/2))}
-    .card{width:min(100%,1080px);min-height:min(760px,calc(100vh - 92px));background:var(--card);border-radius:28px;box-shadow:0 20px 70px #19324a1b;border:1px solid #e3ded5;padding:clamp(24px,4vw,62px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+    .card{width:100%;height:100%;min-height:0;background:var(--card);border-radius:24px;box-shadow:0 16px 54px #19324a1b;border:1px solid #e3ded5;padding:clamp(18px,2.2vw,34px);display:flex;flex-direction:column;position:relative;overflow:hidden}
     .card:before{content:"";position:absolute;inset:0 auto 0 0;width:9px;background:var(--accent)}.card.practical:before{background:var(--green)}
     .topline{display:flex;align-items:center;justify-content:space-between;gap:14px}.kind{display:inline-flex;align-items:center;gap:9px;font-size:.9rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}.practical .kind{color:var(--green)}
-    .source{font-weight:850;color:#7b848b;text-align:right}.prompt{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.65rem,3vw,3.45rem);line-height:1.12;letter-spacing:-.025em;margin:clamp(20px,3vh,38px) 0 20px}
+    .source{font-weight:850;color:#7b848b;text-align:right}.prompt{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.35rem,2.2vw,2.65rem);line-height:1.1;letter-spacing:-.025em;margin:clamp(10px,1.5vh,20px) 0 10px}
     .question-body{display:flex;flex-direction:column;flex:1;min-height:0}.text-only .question-body{justify-content:center}.text-only .prompt{margin:auto 0;text-align:center}
-    .visual{display:flex;align-items:center;justify-content:center;flex:1;min-height:0;margin:0 0 16px}.visual img{display:block;max-width:100%;max-height:min(47vh,440px);object-fit:contain;border-radius:5px}
-    .answer{margin-top:18px;background:#eef6f2;border-left:6px solid var(--green);padding:18px 20px;border-radius:4px 14px 14px 4px;font-size:clamp(1rem,1.35vw,1.22rem);line-height:1.52}.answer strong{color:#23634f}.answer[hidden]{display:none}
-    .actions{display:flex;gap:12px;align-items:center;margin-top:auto;padding-top:24px}.btn{border:0;border-radius:14px;padding:14px 20px;font-weight:950;cursor:pointer}.reveal{background:#e8edf0;color:var(--ink)}.next{background:var(--ink);color:#fff;margin-left:auto;font-size:1.08rem}.next:hover{background:#244b6c}.reveal:hover{background:#dbe2e6}
+    .visual{display:flex;align-items:center;justify-content:center;flex:1;min-height:0;margin:0 0 8px;overflow:hidden}.visual img{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:contain;border-radius:5px}
+    .answer{flex:0 1 auto;max-height:22vh;overflow:auto;margin-top:8px;background:#eef6f2;border-left:6px solid var(--green);padding:12px 16px;border-radius:4px 14px 14px 4px;font-size:clamp(.94rem,1.1vw,1.1rem);line-height:1.4}.answer strong{color:#23634f}.answer[hidden]{display:none}
+    .actions{display:grid;grid-template-columns:auto auto 1fr auto;gap:10px;align-items:center;margin-top:auto;padding-top:12px}.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:950;cursor:pointer}.prev,.reveal{background:#e8edf0;color:var(--ink)}.next{grid-column:4;background:var(--ink);color:#fff;font-size:1.05rem}.next:hover{background:#244b6c}.prev:hover,.reveal:hover{background:#dbe2e6}.prev:disabled{opacity:.38;cursor:default}
     .done{margin:auto;text-align:center;max-width:680px}.done h2{font-size:clamp(2.4rem,5vw,5rem);line-height:.95;margin:0 0 22px}.done p{font-size:1.25rem;line-height:1.5}.done .btn{background:var(--accent);color:white;font-size:1.12rem}
-    @media(max-width:780px){.app{grid-template-columns:1fr;padding:15px}.side{padding:0;gap:13px}.side h1{max-width:none;font-size:2rem;margin:.2rem 0}.intro{display:none}.tiny{display:none}.stage{align-items:stretch}.bottom-reset{align-self:center;margin:2px 0 8px}.card{min-height:66vh;border-radius:20px;padding:23px 20px 20px}.prompt{font-size:1.65rem;margin:18px 0}.visual img{max-height:36vh}.actions{position:sticky;bottom:0;background:linear-gradient(transparent,#fff 16%);padding-top:28px}.btn{padding:13px 15px}}
+    @media(max-width:780px){.app{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);padding:9px}.side{padding:0;gap:7px}.side h1{max-width:none;font-size:1.55rem;margin:.1rem 0}.eyebrow,.intro,.tiny{display:none}.filters{gap:5px}.chip{padding:6px 9px;font-size:.82rem}.stage{align-items:stretch}.bottom-reset{align-self:center;margin:0;font-size:.78rem}.card{height:100%;min-height:0;border-radius:17px;padding:15px 14px 12px}.topline{font-size:.76rem}.kind{font-size:.73rem}.source{font-size:.72rem}.prompt{font-size:clamp(1.08rem,5vw,1.5rem);margin:8px 0}.answer{max-height:24vh;padding:9px 11px;font-size:.87rem}.actions{grid-template-columns:auto 1fr auto;gap:6px;padding-top:8px}.btn{padding:10px 11px;font-size:.84rem}.reveal{grid-column:2}.next{grid-column:3}.prev{grid-column:1}}
   </style>
 </head>
 <body>
@@ -160,15 +160,15 @@ q('v2t13','theory','El modelado arcilloso.','Los materiales blandos originan rel
 q('v2t14','theory','Principales aprovechamientos agroforestales de la Iberia silícea.','Los suelos suelen ser ácidos, poco profundos y poco fértiles. Predominan los pastos, la ganadería extensiva, la dehesa y los aprovechamientos forestales.'),
 q('v2t15','theory','Principales aprovechamientos agroforestales de la Iberia caliza.','Las fuertes pendientes y los suelos poco profundos favorecen usos ganaderos y forestales; en sectores más favorables aparecen cultivos mediterráneos como trigo, vid y olivo.'),
 q('v2t16','theory','Principales aprovechamientos agrarios de la Iberia arcillosa.','Sus relieves llanos y suelos profundos favorecen los cultivos extensivos —cereales, vid y olivo— y el regadío en vegas y campiñas.'),
-q('v2g01','theory','Defina: archipiélago.','Conjunto formado por varias islas que se encuentran próximas entre sí.','Glosario'),
-q('v2g02','theory','Defina: escala de un mapa.','Relación existente entre una distancia representada sobre un mapa y su tamaño real sobre el terreno.','Glosario'),
-q('v2g03','theory','Defina: latitud geográfica.','Distancia angular, medida en grados sobre un arco de meridiano, entre cualquier punto de la superficie terrestre y el ecuador.','Glosario'),
-q('v2g04','theory','Defina: longitud geográfica.','Distancia angular, expresada en grados, entre cualquier punto de la superficie terrestre y el meridiano de Greenwich.','Glosario'),
-q('v2g05','theory','Defina: mapa temático.','Representación cartográfica de la distribución de una o varias variables concretas.','Glosario'),
-q('v2g06','theory','Defina: mapa topográfico.','Mapa que representa el relieve y elementos naturales y humanos con localización precisa.','Glosario'),
-q('v2g07','theory','Defina: meridiano.','Semicircunferencia imaginaria que une los polos y sirve de referencia para determinar la longitud geográfica.','Glosario'),
-q('v2g08','theory','Defina: paralelo.','Circunferencia imaginaria que rodea la Tierra perpendicularmente a su eje y cuyos puntos se encuentran a igual distancia angular del ecuador.','Glosario'),
-q('v2g09','theory','Defina: península.','Porción de tierra rodeada de agua salvo por la parte que la une a un territorio mayor.','Glosario')
+q('v2g01','theory','Conjunto formado por varias islas que se encuentran próximas entre sí.','Archipiélago.','Glosario'),
+q('v2g02','theory','Relación existente entre una distancia representada sobre un mapa y su tamaño real sobre el terreno.','Escala de un mapa.','Glosario'),
+q('v2g03','theory','Distancia angular, medida en grados sobre un arco de meridiano, entre cualquier punto de la superficie terrestre y el ecuador.','Latitud geográfica.','Glosario'),
+q('v2g04','theory','Distancia angular, expresada en grados, entre cualquier punto de la superficie terrestre y el meridiano de Greenwich.','Longitud geográfica.','Glosario'),
+q('v2g05','theory','Representación cartográfica de la distribución de una o varias variables concretas.','Mapa temático.','Glosario'),
+q('v2g06','theory','Mapa que representa el relieve y elementos naturales y humanos con localización precisa.','Mapa topográfico.','Glosario'),
+q('v2g07','theory','Semicircunferencia imaginaria que une los polos y sirve de referencia para determinar la longitud geográfica.','Meridiano.','Glosario'),
+q('v2g08','theory','Circunferencia imaginaria que rodea la Tierra perpendicularmente a su eje y cuyos puntos se encuentran a igual distancia angular del ecuador.','Paralelo.','Glosario'),
+q('v2g09','theory','Porción de tierra rodeada de agua salvo por la parte que la une a un territorio mayor.','Península.','Glosario')
 ];
 const practicalV2=[
 q('v2p01','practical','Relacione, con nombre y número, las unidades de relieve exteriores a la Meseta.','Pirineo axial (3), Prepirineos (4), depresión del Ebro (6), depresión del Guadalquivir (12), Subbética (13), Penibética (14) y Cordillera Costero-Catalana (15).','PAU 2010 · Unidades morfoestructurales','p15'),
@@ -207,22 +207,26 @@ q('v2p33','practical','La Meseta y sus unidades interiores.','Superficie elevada
 q('v2p34','practical','Los rebordes montañosos de la Meseta.','Macizo Galaico-Leonés al noroeste; Cantábrica al norte, silícea al oeste y caliza al este; Sistema Ibérico al este, principalmente calizo; y Sierra Morena al sur, escalón tectónico silíceo.','PAU 2025 · Suplente 2-B','p5'),
 q('v2p35','practical','Enuncie, ordenados de norte a sur, la letra y el nombre de los sistemas de relieve del perfil.','D, Cordillera Cantábrica; A, Sistema Central; C, Montes de Toledo; E, Sierra Morena; B, Cordilleras Béticas.','PAU 2014 · Perfil topográfico','p8'),
 q('v2p36','practical','Analice la estructura del relieve peninsular guiándose por el perfil topográfico.','Meseta elevada dividida por el Sistema Central y recorrida por los Montes de Toledo. Cantábrica y Sierra Morena son rebordes; al sur se suceden la depresión del Guadalquivir y las Béticas.','PAU 2014 · Perfil topográfico','p8'),
-q('v2p37','practical','Identifique los sistemas de relieve señalados con letras y clasifíquelos en interiores, periféricos y exteriores a la Meseta.','A, Sistema Central: interior. C, Cantábrica, y E, Sistema Ibérico: periféricos. B, Pirineos, y D, Béticas: exteriores.','PAU 2011 · Mapa físico','p10')
+q('v2p37','practical','Identifique los sistemas de relieve señalados con letras y clasifíquelos en interiores, periféricos y exteriores a la Meseta.','A, Sistema Central: interior. C, Cantábrica, y E, Sistema Ibérico: periféricos. B, Pirineos, y D, Béticas: exteriores.','PAU 2011 · Mapa físico','p10'),
+q('v2p38','practical','Diga cuáles son los accidentes geográficos señalados con letras.','A, Rías Baixas; B, golfo de Vizcaya; C, cabo de la Nao; D, cabo de Gata; E, golfo de Cádiz.','PAU 2008 · Regiones costeras','p1'),
+q('v2p39','practical','Explique las características del tramo costero de la provincia 4.','Corresponde a Girona y a la Costa Brava: costa abrupta, rocosa y recortada, con acantilados y pequeñas calas por la proximidad de la Cordillera Costero-Catalana.','PAU 2008 · Regiones costeras','p1'),
+q('v2p40','practical','Explique las características del tramo costero que se extiende por las provincias 8 y 9.','Corresponde a Cádiz y Huelva, la Costa de la Luz: costa baja y arenosa, con largas playas, dunas, flechas litorales y marismas.','PAU 2008 · Regiones costeras','p1')
 ];
 questions=[...theoryV2,...practicalV2];
 const KEY='relieve-litologia-oral-v5';
-const $=s=>document.querySelector(s);let mode='all',deck=[],current=null;
+const $=s=>document.querySelector(s);let mode='all',deck=[],history=[],current=null;
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function pool(){return questions.filter(x=>mode==='all'||x.type===mode)}
-function save(){localStorage.setItem(KEY,JSON.stringify({mode,deck,current:current?.id||null}))}
-function load(){try{let s=JSON.parse(localStorage.getItem(KEY));if(!s)return false;mode=s.mode||'all';let ids=new Set(pool().map(x=>x.id));deck=(s.deck||[]).filter(id=>ids.has(id));current=questions.find(x=>x.id===s.current&&ids.has(x.id))||null;return true}catch{return false}}
-function fresh(){deck=shuffle(pool().map(x=>x.id));current=null;next()}
-function render(){let card=$('#card');document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));if(!current){card.className='card';card.innerHTML='<div class="done"><div class="eyebrow">Ronda terminada</div><h2>No quedan preguntas sin repetir</h2><p>Puedes volver a barajar o cambiar de modalidad.</p><button class="btn" id="again">Barajar otra ronda</button></div>';$('#again').onclick=fresh;save();return}const source=current.source?`<span class="source">${current.source}</span>`:'';const image=current.image?`<div class="visual"><img src="${IMAGES[current.image]}" alt="Documento geográfico de un práctico de Selectividad"></div>`:'';card.className='card '+(current.type==='practical'?'practical':'')+(current.image?'':' text-only');card.innerHTML=`<div class="topline"><span class="kind">${current.type==='practical'?'Práctico de Selectividad':'Pregunta del temario'}</span>${source}</div><div class="question-body"><h2 class="prompt">${current.prompt}</h2>${image}</div><div class="answer" id="answer" hidden><strong>Guion de respuesta:</strong> ${current.answer}</div><div class="actions"><button class="btn reveal" id="reveal">Mostrar respuesta</button><button class="btn next" id="next">Otra pregunta →</button></div>`;$('#reveal').onclick=()=>{let a=$('#answer'),b=$('#reveal');a.hidden=!a.hidden;b.textContent=a.hidden?'Mostrar respuesta':'Ocultar respuesta'};$('#next').onclick=next;save()}
-function next(){if(!deck.length){current=null;render();return}let id=deck.shift();current=questions.find(x=>x.id===id);render()}
+function save(){localStorage.setItem(KEY,JSON.stringify({mode,deck,history,current:current?.id||null}))}
+function load(){try{let s=JSON.parse(localStorage.getItem(KEY));if(!s)return false;mode=s.mode||'all';let ids=new Set(pool().map(x=>x.id));deck=(s.deck||[]).filter(id=>ids.has(id));history=(s.history||[]).filter(id=>ids.has(id));current=questions.find(x=>x.id===s.current&&ids.has(x.id))||null;return true}catch{return false}}
+function fresh(){deck=shuffle(pool().map(x=>x.id));history=[];current=null;next()}
+function render(){let card=$('#card');document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));if(!current){card.className='card';card.innerHTML='<div class="done"><div class="eyebrow">Ronda terminada</div><h2>No quedan preguntas sin repetir</h2><p>Puedes volver a barajar o regresar a la pregunta anterior.</p><div class="actions"><button class="btn prev" id="prev"'+(history.length?'':' disabled')+'>← Anterior</button><button class="btn" id="again">Barajar otra ronda</button></div></div>';$('#again').onclick=fresh;$('#prev').onclick=previous;save();return}const source=current.source?`<span class="source">${current.source}</span>`:'';const image=current.image?`<div class="visual"><img src="${IMAGES[current.image]}" alt="Documento geográfico de un práctico de Selectividad"></div>`:'';const answerLabel=current.source==='Glosario'?'Término:':'Guion de respuesta:';card.className='card '+(current.type==='practical'?'practical':'')+(current.image?'':' text-only');card.innerHTML=`<div class="topline"><span class="kind">${current.type==='practical'?'Práctico de Selectividad':'Pregunta del temario'}</span>${source}</div><div class="question-body"><h2 class="prompt">${current.prompt}</h2>${image}</div><div class="answer" id="answer" hidden><strong>${answerLabel}</strong> ${current.answer}</div><div class="actions"><button class="btn prev" id="prev" ${history.length?'':'disabled'}>← Anterior</button><button class="btn reveal" id="reveal">Mostrar respuesta</button><button class="btn next" id="next">Siguiente →</button></div>`;$('#prev').onclick=previous;$('#reveal').onclick=()=>{let a=$('#answer'),b=$('#reveal');a.hidden=!a.hidden;b.textContent=a.hidden?'Mostrar respuesta':'Ocultar respuesta'};$('#next').onclick=next;save()}
+function next(){if(current)history.push(current.id);if(!deck.length){current=null;render();return}let id=deck.shift();current=questions.find(x=>x.id===id);render()}
+function previous(){if(!history.length)return;if(current)deck.unshift(current.id);current=questions.find(x=>x.id===history.pop());render()}
 document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{if(b.dataset.mode===mode)return;mode=b.dataset.mode;fresh()});
 $('#reset').onclick=()=>{if(confirm('¿Borrar el progreso y barajar todas las preguntas de esta modalidad?'))fresh()};
-if(!load())fresh();else if(!current&&deck.length)next();else render();
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&current)next();if(e.key===' '&&current){e.preventDefault();$('#reveal').click()}});
+fresh();
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&current)next();if(e.key==='ArrowLeft')previous();if(e.key===' '&&current){e.preventDefault();$('#reveal').click()}});
 </script>
 </body>
 </html>
